@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mesa Steam Showers
 
-## Getting Started
+Mesa Steam Showers is a marketing and e-commerce experience built with Next.js 15 and Tailwind CSS. The site showcases a curated product line, highlights Mesa&apos;s differentiators, and guides visitors toward booking a white-glove design consultation.
 
-First, run the development server:
+## Project structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+src/
+├── app/
+│   ├── layout.tsx        # Global metadata and layout shell
+│   └── page.tsx          # Homepage composition
+├── components/
+│   ├── cards/            # Reusable UI cards (product tile, etc.)
+│   ├── layout/           # Page chrome (header, footer, container)
+│   └── sections/         # Homepage feature sections
+├── data/                 # Structured content for products, FAQs, etc.
+└── types/                # Shared TypeScript interfaces for content
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+All sections are driven by structured data modules under `src/data`, making it easy to expand the catalog, testimonials, or FAQs without touching the layout code.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Getting started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Visit [http://localhost:3000](http://localhost:3000) to explore the experience. Update any content files under `src/data` or tweak components in `src/components` to customize the storefront.
 
-To learn more about Next.js, take a look at the following resources:
+## Available scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run dev` – start the local development server with Turbopack
+- `npm run build` – create an optimized production build
+- `npm run start` – run the production build locally
+- `npm run lint` – run ESLint against the project
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Design language
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The interface leans on a dark, cinematic aesthetic with cyan accents to mirror premium spa environments. Tailwind CSS utilities are used for layout and spacing, while reusable wrappers like `Container` and `Section` components provide consistent rhythm across the page.
